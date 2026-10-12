@@ -1,0 +1,10 @@
+# Rebuilt inside the image
+**/node_modules
+client/dist
+
+# Secrets and runtime data are provided when the container runs, never baked in
+**/.env
+server/data
+
+.git
+*.log

@@ -1,0 +1,17 @@
+services:
+  network-health:
+    build: .
+    image: network-health:latest
+    container_name: network-health
+    ports:
+      - "6030:6030"
+    # FORTIGATE_HOST, FORTIGATE_TOKEN, FORTIGATE_INSECURE_TLS, ... (see server/.env.example)
+    env_file:
+      - ./server/.env
+    environment:
+      PORT: "6030" # wins over any PORT in server/.env
+    volumes:
+      # The servers you add on the dashboard; kept on the host so they survive rebuilds.
+      # Only one instance may use this folder at a time (stop `npm start` before `docker compose up`).
+      - ./server/data:/app/server/data
+    restart: unless-stopped

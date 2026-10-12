@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.env
+# Runtime data written by the server (custom device names etc.)
+server/data/

@@ -1,0 +1,17 @@
+{
+  "name": "network-health-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "start": "node --env-file=.env src/server.js",
+    "dev": "node --watch --env-file=.env src/server.js",
+    "devices": "node --env-file=.env src/cli.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
